@@ -1,3 +1,6 @@
+123
+- Remove Amlogic grabber
+- Drop platform script
 122
 - Add platform script
 121
