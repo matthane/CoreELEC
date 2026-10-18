@@ -2,6 +2,7 @@
 - Remove Amlogic grabber
 - Drop platform script
 - Feed the Kodi picture, video and menus, to Hyperion by itself over hyperiond's flatbuffer server, on by default (screen capture used to be opt-in)
+- Build without the DRM and framebuffer screen grabbers
 122
 - Add platform script
 121
