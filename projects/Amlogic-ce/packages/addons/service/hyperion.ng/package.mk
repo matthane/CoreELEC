@@ -40,7 +40,8 @@ pre_configure_target() {
                          -DENABLE_AMLOGIC=OFF \
                          -DENABLE_DISPMANX=OFF \
                          -DENABLE_CEC=OFF \
-                         -DENABLE_FB=ON \
+                         -DENABLE_FB=OFF \
+                         -DENABLE_DRM=OFF \
                          -DENABLE_DEV_WS281XPWM=OFF \
                          -DENABLE_X11=OFF \
                          -DENABLE_V4L2=ON \
