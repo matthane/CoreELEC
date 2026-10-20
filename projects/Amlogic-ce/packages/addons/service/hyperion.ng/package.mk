@@ -9,6 +9,7 @@ PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/hyperion-project/hyperion.ng"
 PKG_URL="https://github.com/hyperion-project/hyperion.ng/archive/${PKG_VERSION}.tar.gz"
 PKG_DEPENDS_TARGET="toolchain Python3 libusb libdrm libftdi1 qt6 protobuf flatbuffers:host flatbuffers libjpeg-turbo qmdnsengine mbedtls alsa-lib"
+PKG_DEPENDS_UNPACK="flatbuffers"
 PKG_SECTION="service"
 PKG_SHORTDESC="Hyperion.NG: an AmbiLight controller"
 PKG_LONGDESC="Hyperion.NG(${PKG_VERSION}) is an modern opensource AmbiLight implementation."
@@ -58,4 +59,11 @@ pre_configure_target() {
 addon() {
   mkdir -p ${ADDON_BUILD}/${PKG_ADDON_ID}/bin
     cp ${PKG_BUILD}/.${TARGET_NAME}/bin/hyperiond ${ADDON_BUILD}/${PKG_ADDON_ID}/bin
+
+  mkdir -p ${ADDON_BUILD}/${PKG_ADDON_ID}/resources/lib
+    ${TOOLCHAIN}/bin/flatc --python -o ${ADDON_BUILD}/${PKG_ADDON_ID}/resources/lib \
+      ${PKG_BUILD}/libsrc/flatbufserver/hyperion_request.fbs \
+      ${PKG_BUILD}/libsrc/flatbufserver/hyperion_reply.fbs
+    cp -r $(get_build_dir flatbuffers)/python/flatbuffers ${ADDON_BUILD}/${PKG_ADDON_ID}/resources/lib
+    cp $(get_build_dir flatbuffers)/LICENSE ${ADDON_BUILD}/${PKG_ADDON_ID}/resources/lib/flatbuffers
 }
