@@ -1,0 +1,33 @@
+# Kodi Media Center language file
+# Addon Name: Hyperion.NG
+# Addon id: service.hyperion.ng
+# Addon Provider: Team CoreELEC
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgctxt "#30000"
+msgid "Kodi"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Send the Kodi picture to Hyperion"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Off"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Video"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Video and menus"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Disable the Hyperion Ambilight add-on if it is installed. Only one add-on can capture Kodi at a time."
+msgstr ""

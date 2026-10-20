@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings version="1">
+  <section id="service.hyperion.ng">
+    <category id="kodi" label="30000">
+      <group id="1">
+        <setting id="KODI_FEED" type="integer" label="30001" help="30005">
+          <level>0</level>
+          <default>2</default>
+          <constraints>
+            <options>
+              <option label="30002">0</option>
+              <option label="30003">1</option>
+              <option label="30004">2</option>
+            </options>
+          </constraints>
+          <control type="spinner" format="string"/>
+        </setting>
+      </group>
+    </category>
+  </section>
+</settings>
