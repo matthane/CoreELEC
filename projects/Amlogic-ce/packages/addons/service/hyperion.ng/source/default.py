@@ -55,6 +55,7 @@ class Feeder(xbmc.Monitor):
         self.player = xbmc.Player()
         self.screensaver = xbmc.getCondVisibility('System.ScreenSaverActive')
         self.feed = xbmcaddon.Addon().getSettingInt('KODI_FEED')
+        self.feed_screensaver = xbmcaddon.Addon().getSettingBool('KODI_SCREENSAVER')
         self.video_only = False
         self.retry_at = 0
         self.empty = 0
@@ -71,6 +72,7 @@ class Feeder(xbmc.Monitor):
 
     def onSettingsChanged(self):
         self.feed = xbmcaddon.Addon().getSettingInt('KODI_FEED')
+        self.feed_screensaver = xbmcaddon.Addon().getSettingBool('KODI_SCREENSAVER')
 
     def onScreensaverActivated(self):
         self.screensaver = True
@@ -80,9 +82,13 @@ class Feeder(xbmc.Monitor):
 
     def target(self):
         # what to capture, None while nothing may be fed
-        if self.feed == FEED_OFF or self.screensaver:
+        if self.feed == FEED_OFF:
             return None
-        if self.player.isPlayingVideo():
+        if self.screensaver:
+            # a screensaver covers the video, so only the composite shows it
+            if self.feed != FEED_ALL or not self.feed_screensaver:
+                return None
+        elif self.player.isPlayingVideo():
             return FEED_VIDEO
         if self.feed == FEED_ALL and not self.video_only and time.monotonic() >= self.retry_at:
             return FEED_ALL

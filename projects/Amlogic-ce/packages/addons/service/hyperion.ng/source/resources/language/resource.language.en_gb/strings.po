@@ -31,3 +31,11 @@ msgstr ""
 msgctxt "#30005"
 msgid "Disable the Hyperion Ambilight add-on if it is installed. Only one add-on can capture Kodi at a time."
 msgstr ""
+
+msgctxt "#30006"
+msgid "Include screensavers"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Keep sending the picture while a screensaver runs. With the black or dim screensaver the LEDs go dark or dim instead of showing what Hyperion shows without Kodi."
+msgstr ""

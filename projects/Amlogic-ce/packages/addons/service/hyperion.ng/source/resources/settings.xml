@@ -15,6 +15,14 @@
           </constraints>
           <control type="spinner" format="string"/>
         </setting>
+        <setting id="KODI_SCREENSAVER" type="boolean" label="30006" help="30007" parent="KODI_FEED">
+          <level>0</level>
+          <default>false</default>
+          <dependencies>
+            <dependency type="visible" setting="KODI_FEED">2</dependency>
+          </dependencies>
+          <control type="toggle"/>
+        </setting>
       </group>
     </category>
   </section>
